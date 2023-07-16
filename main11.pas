@@ -20,6 +20,7 @@ procedure CycleFeuTri(trouge:integer; torange:integer; tvert:integer);
     begin 
         while true do 
             begin
+            
                 for i:=1 to trouge do
                     feuTricolore(true,false,false);
                 for i:=1 to torange do

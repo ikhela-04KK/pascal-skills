@@ -23,6 +23,6 @@ begin
 
     write('entrer la taille de la chaussure : M,S,L,X,XL,XXL');
     readln(pairs.taille);
-
-
 end.
+
+ 

@@ -1,7 +1,7 @@
 // creer une procedure qui affiche un nombred'étoile en fonction entré dans le proompt 
 // creer un groupe de 2étoiles 25 fois 
 program  sous_routine; 
-uses  crt; 
+uses crt; 
 
 procedure ligne(n:integer);
     var j:integer;
