@@ -54,9 +54,9 @@ begin
 end. 
    
 // essayer de faire un tri avec des valeurs initialisés ---OK
-// essayer de faire un trie avec setLenght comme j'ai vu dans le chapitre précedent 
-// tu dois bosser et implementer le maximum de trie possible
-// essayer de mieux comprendre cette histoire de type 
-//  tu dois faire des exercice sur les fonctions et procedure 
-//  tu dois aussi connaître les méthodes qui peuvent te permettre d'aller plus vite que possible en pascal 
-// essayer de faire aussi ces mêmes implementations en c 
+// essayer de faire un trie avec setLenght comme j'ai vu dans le chapitre précedent ---> utilisation de setLenght --> OK
+// tu dois bosser et implementer le maximum de trie possible ----> avec différentes méthodes je vais le faire tout de suite 
+// essayer de mieux comprendre cette histoire de type ---> trie plus type 
+//  tu dois faire des exercice sur les fonctions et procedure --> trie plus fonction plus procedure plus type
+//  tu dois aussi connaître les méthodes qui peuvent te permettre d'aller plus vite que possible en pascal ---> rechercher maintenant 
+// essayer de faire aussi ces mêmes implementations en c --> plus tard 
