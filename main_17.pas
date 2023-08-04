@@ -8,13 +8,16 @@ type
     nom : string; 
     age: integer; 
 end; 
-perso = array of person; // faites comme ça pour pouvoir mettre un tableau dans une fonction
+ // faites comme ça pour pouvoir mettre un tableau dans une fonction
 //  creation d'une fonction qui enregistre les noms au préalable et qui arrête l'enregistrement lorsqu'on appui sur 0; la fonction doit retourner le tableau pour fonctionner
 // persons : array of person, est ce qu'in peut implementer la un tableau directement dans la fonction 
 
-function savPers(var nbPers: integer):perso; 
-    var
-        persons:perso;
+perso = array of person;
+var
+    persons:perso;
+
+function savPers(var nbPers: integer):persons; 
+    var 
         i:integer;  
     begin 
         setLength(nbPers, persons);
