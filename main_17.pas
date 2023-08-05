@@ -3,6 +3,7 @@
 program triePlusAge;
 uses crt; 
 
+<<<<<<< HEAD
 type names  = (koffi, kan, marc, ephrem, lydie, jeremie, antoine, sabrina, kounion, sanemi, rayane,paola, saga, dago, lombert, jores,pouvant, junior,desmont, oprah);
 
 type 
@@ -13,10 +14,20 @@ end;
 
 
 perso = array of person;  // condense l'enregistrement en un type utilisable par les fonctions et procedure et variables 
+=======
+type 
+    person = record
+    nom : string; 
+    age: integer; 
+end; 
+
+perso = array of person;
+>>>>>>> 72865589cd33f3bb120b451ee098fb3842d7bb8c
  // faites comme ça pour pouvoir mettre un tableau dans une fonction
 //  creation d'une fonction qui enregistre les noms au préalable et qui arrête l'enregistrement lorsqu'on appui sur 0; la fonction doit retourner le tableau pour fonctionner
 // persons : array of person, est ce qu'in peut implementer la un tableau directement dans la fonction 
 
+<<<<<<< HEAD
 // creer une fonction qui evite les doublons
 function verifName(nbPers:integer; persons:perso ; randName:names):names;
     var 
@@ -55,12 +66,26 @@ function savPers(nbPers:integer):perso; // l'élément var devant la variable n'
                 randName:=names(random(nbPers));
                 randName:=verifName(nbPers,randName);
                 persons[i].nom := randName;
+=======
+function savPers(nbPers:integer):perso; 
+    var
+        persons:perso;
+        i:integer;  
+    begin 
+        setLength(persons,nbPers);
+
+        for i:= 1 to length(persons) do 
+            begin
+                WriteLn('entrer personne ', i);
+                ReadLn(persons[i].nom);
+>>>>>>> 72865589cd33f3bb120b451ee098fb3842d7bb8c
                 WriteLn('vous avez entrez le nom de ', persons[i].nom, ' entrez maintenant son age ');
                 ReadLn(persons[i].age);
             end;
         savPers := persons;
     end;
 
+<<<<<<< HEAD
 // implementation d'une fonction de tri pour trier l'âge 
 
 procedure affPers(var personne:perso; nbPers:integer);
@@ -86,6 +111,14 @@ procedure affPers(var personne:perso; nbPers:integer);
             end;
         for i:= 1 to nbPers do 
             writeln('inscrit ', i, '| nom: ', personne[i].nom, ' | age: ', personne[i].age);
+=======
+procedure affPers(var personne:perso);
+    var 
+        i:integer; 
+    begin 
+        for i:= 1 to Length(personne) do 
+            writeln('inscrit ', i, '| nom: ', personne[i].nom, 'age: ', personne[i].age);
+>>>>>>> 72865589cd33f3bb120b451ee098fb3842d7bb8c
     end;
 
 var 
@@ -96,6 +129,10 @@ begin
     WriteLn('entrer le nombre de personnes que vous voulez enregistrez ?');
     ReadLn(nbPers);
     personnes := savPers(nbPers);
+<<<<<<< HEAD
     affPers(personnes,nbPers); 
+=======
+    affPers(personnes); 
+>>>>>>> 72865589cd33f3bb120b451ee098fb3842d7bb8c
 end.
 
