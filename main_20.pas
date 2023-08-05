@@ -106,7 +106,7 @@ begin
     writeln( i, ' | Nom: ', personne[i].nom, ' | Age: ', personne[i].age, ' | Tickets: ', personne[i].tick);
 end;
 
-// programme principal
+// programme principald
 var 
     nbPers:integer;
     personnes : perso;
