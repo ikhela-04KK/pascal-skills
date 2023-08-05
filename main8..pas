@@ -13,16 +13,25 @@ type
 
 var 
     pairs : chaussure;
+    i:integer;
 
-begin 
-    write('entrer le nom de marque de la chaussure: ');
-    readln(pairs.marque);
+begin
+  
+// essayer de mettre en place un sytème de tableau ici
+for i:= 1 to 2 do 
+    begin
+        write('entrer le nom de marque de la chaussure: ');
+        readln(pairs.marque);
 
-    write('entrer le prix en XOF: ');
-    readln(pairs.prix);
+        write('entrer le prix en XOF: ');
+        readln(pairs.prix);
 
-    write('entrer la taille de la chaussure : M,S,L,X,XL,XXL');
-    readln(pairs.taille);
+        write('entrer la taille de la chaussure : M,S,L,X,XL,XXL');
+        readln(pairs.taille);
+    end;
+for i:= 1 to 2 do 
+    WriteLn(pairs.marque, '----', pairs.prix, '-----', pairs.taille)
 end.
+
 
  
