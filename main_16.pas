@@ -16,7 +16,5 @@ begin
 
     for i:=1 to Length(tab) do 
         writeln(tab[i]);  
-
-
-
 end.
+

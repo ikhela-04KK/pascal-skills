@@ -3,51 +3,99 @@
 program triePlusAge;
 uses crt; 
 
+type names  = (koffi, kan, marc, ephrem, lydie, jeremie, antoine, sabrina, kounion, sanemi, rayane,paola, saga, dago, lombert, jores,pouvant, junior,desmont, oprah);
+
 type 
     person = record
-    nom : string; 
+    nom : names; // specifier pour pouvoir utilisé le type énumération 
     age: integer; 
 end; 
+
+
+perso = array of person;  // condense l'enregistrement en un type utilisable par les fonctions et procedure et variables 
  // faites comme ça pour pouvoir mettre un tableau dans une fonction
 //  creation d'une fonction qui enregistre les noms au préalable et qui arrête l'enregistrement lorsqu'on appui sur 0; la fonction doit retourner le tableau pour fonctionner
 // persons : array of person, est ce qu'in peut implementer la un tableau directement dans la fonction 
 
-perso = array of person;
-var
-    persons:perso;
-
-function savPers(var nbPers: integer):persons; 
+// creer une fonction qui evite les doublons
+function verifName(nbPers:integer; persons:perso ; randName:names):names;
     var 
-        i:integer;  
-    begin 
-        setLength(nbPers, persons);
+        i:integer;
+        found : Boolean;
+        begin
+            for i:= 1 to nbPers do
+                    begin
+                        if persons[i].nom = randName then
+                            begin
+                                found := true;
+                                break;
+                            end;
+                        end;
+                    if found then
+                        persons[i].nom := names(random(nbPers));
+            // verifName := persons[i].nom
+    end;
 
-        for i:= 1 to length(persons) do 
+
+function savPers(nbPers:integer):perso; // l'élément var devant la variable n'est pas obligatoire 
+    var
+        persons:perso;
+        i:integer;
+        randName: names;
+        // found: boolean;
+        // name :names;  
+
+    begin 
+        setLength(persons,nbPers);
+        for i:= 1 to nbPers do 
             begin
-                WriteLn('entrer personne ', i);
-                ReadLn(persons[i].nom);
-                WriteLn('vous avez entrez le nom de ', persons[i].nom, 'entrez maintenant son âge ');
+                // WriteLn('entrer personne ', i);
+                // ReadLn(persons[i].nom);
+                // found := False;
+                randName:=names(random(nbPers));
+                randName:=verifName(nbPers,randName);
+                persons[i].nom := randName;
+                WriteLn('vous avez entrez le nom de ', persons[i].nom, ' entrez maintenant son age ');
                 ReadLn(persons[i].age);
             end;
         savPers := persons;
     end;
 
-procedure affPers(var personne:person);
+// implementation d'une fonction de tri pour trier l'âge 
+
+procedure affPers(var personne:perso; nbPers:integer);
     var 
-        i:integer; 
+        i,inv:integer;
+        arret: Boolean;
+
     begin 
-        for i:= 1 to Length(personne) do 
-            writeln('inscrit ', i, '| nom: ', personne[i].nom, 'age: ', personne[i].age);
+        arret := true;
+        while arret do 
+            begin 
+                arret := false;
+                for i:= 1 to nbPers-1 do // mettre toujours -1 pour eviter qui ne trie pas le 1er 
+                    begin 
+                        if personne[i].age > personne[i+1].age then 
+                            begin 
+                                inv := personne[i].age;
+                                personne[i].age := personne[i+1].age;
+                                personne[i+1].age := inv; // faites attention aux égales2
+                                arret := true;
+                            end;
+                    end;            
+            end;
+        for i:= 1 to nbPers do 
+            writeln('inscrit ', i, '| nom: ', personne[i].nom, ' | age: ', personne[i].age);
     end;
 
 var 
-    nbPers: string;
-    personnes :person; 
+    nbPers: integer;
+    personnes:perso; 
 
 begin 
     WriteLn('entrer le nombre de personnes que vous voulez enregistrez ?');
     ReadLn(nbPers);
     personnes := savPers(nbPers);
-    affPers(personnes); 
+    affPers(personnes,nbPers); 
 end.
 

@@ -2,7 +2,7 @@
 Program dec_type; 
 uses crt; 
 
-type tjour  = (lundi, mardi, mercredi, jeudi,vendredi, samedi,dimanche);
+type tjour  = (koffi, kan, marc, ephrem, lydie, jeremie, antoine, sabrina, kounion, sanemi, rayane,paola, saga, dago, lombert, jores,pouvant, junior,desmont, oprah);
 // combien d'élément peuventprendre les types que l'on crée soit même
 // ttjour =lundi..vendredi
 // mois = 1..12
@@ -11,17 +11,14 @@ type tjour  = (lundi, mardi, mercredi, jeudi,vendredi, samedi,dimanche);
 
 // comment  savoir le type en pascal
 var jour1,jour2:tjour;
+    // tab: array[lundi..dimanche] of tjour;
 
 begin 
-    jour1:= mercredi;
-    jour2:=samedi; // un type imcopatible lorsque j'ai essayé de mettre jour2:=1
-    writeln(jour2);
+    randomize;
+    writeln(tjour(random(20)));
 
     //essayer de  boucler dessus 
-
-    for jour1:=lundi to vendredi do 
-        begin
-             writeln(jour1);
-        end;
+    // write(tb);
+    
 end.
 
