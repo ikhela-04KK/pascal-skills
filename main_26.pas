@@ -64,7 +64,7 @@ var
         iTab:=tab;
         end;
 
-// function du programme principal
+// fonction du programme principal
 var 
     tabs:tab; // duplicate value: tab
 
