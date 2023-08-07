@@ -29,7 +29,7 @@ function forY(X1:Real; p:integer):Real;
         p1:=1; 
         // y :=0;
         for i:=1 to p do  
-            p1:= i*p1;a 
+            p1:= i*p1;
         // WriteLn(p1, 'fact');
         y := X / p1;
         forY := y;
