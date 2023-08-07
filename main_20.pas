@@ -1,5 +1,8 @@
 // creer des tickets de cinéma aléatoire et leur attribuer à des propriétaire de façon aléatoire, tu dois attribuer 20 tickers à 20 tickets de façon aléatoire. 
 
+// shinzou = coeur 
+// sasageyo = sacrifice
+
 program tickCin; 
 uses crt; 
 

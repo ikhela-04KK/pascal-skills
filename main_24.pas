@@ -37,4 +37,4 @@ begin
             else 
                 WriteLn('il n y a pas de solution')
         end;
-end.
+end. 
