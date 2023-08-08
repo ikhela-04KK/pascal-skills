@@ -16,13 +16,18 @@ type
   );
 
 var 
-    name:string;
+    name,a:string;
     t:array[1..2] of string;
 begin 
+    ClrScr;
     t[1]:='marco';
     t[2]:= 'ikeha';
-    WriteLn(TName(0));
+    // WriteLn(str(3,'3'));
     name := 'ikhela';
     WriteLn(t[1][1]);
-    WriteLn(t[1]+t[2]);
+    WriteLn(t[2][1]);
+    WriteLn(Copy(t[1],1,2)); // utilisé pour supprimer des caractères en fonction des position 
+    // a:=Delete(t[2],1);
+    // WriteLn(a);
+    WriteLn(val('ik'))
 end.

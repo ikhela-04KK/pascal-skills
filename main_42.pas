@@ -31,7 +31,8 @@ begin
     tick := nbticket; //ajout pour plus de style 
     while nbticket>0 do
         begin
-            nbticket := nbticket-1;
+            // nbticket := nbticket-1; correcte mais peut faire mieux 
+            Dec(nbticket);
             WriteLn('entrer les caracteres du tickets ',tick-nbticket,' : '); 
             ReadLn(ref);
             // appeler la fonction extract(2,ref);
@@ -39,10 +40,18 @@ begin
                 begin
                     WriteLn('Entrez le prix du ticket ', ref);
                     ReadLn(prix);
-                    nbfaux := nbfaux +1;
+                    //** nbfaux := nbfaux +1; // correcte mais pet faire mieux 
+                    Inc(nbfaux);
                     mtantPrej := mtantPrej + prix;
                 end;
             // nbticket := nbticket-1;
         end;
-    WriteLn('Au total , il y a ',nbfaux,' faux tickets pour un montant de ',mtantPrej);
+    WriteLn('Au total , il y a ',nbfaux,' faux tickets pour un montant de ',mtantPrej:0:0);
 end.
+
+{
+    trunc() prend la partie entiere sans arrondi tout reel
+    int() prend la partie entire sans arrondi longInt / tout reel
+    Frac(a) prend la partie fractionnaire uniquement 
+    
+}
